@@ -10,6 +10,7 @@ possibleChoices.forEach(possibleChoices => possibleChoices.addEventListener("cli
     userChoice = e.target.id;
     userChoiceDisplay.innerHTML = userChoice;
     generateComputerChoice();
+    getResult();
 }));
 
 function generateComputerChoice() {
@@ -31,12 +32,15 @@ function getResult() {
     } else if(computerChoice === "rock" && userChoice === "paper") {
         result = "You win!";
     } else if(computerChoice === "rock" && userChoice === "scissors") {
-        result = "You lost!";
+        result = "You lose!";
     } else if(computerChoice === "paper" && userChoice === "scissors") {
         result = "You win!";
     } else if(computerChoice === "paper" && userChoice === "rock") {
         result = "You lose!";
     } else if(computerChoice === "scissors" && userChoice === "rock") {
         result = "You win!";
+    } else if(computerChoice === "scissors" && userChoice === "paper") {
+        result = "You lose!";
     }
+    resultDisplay.innerHTML = result;
 }
